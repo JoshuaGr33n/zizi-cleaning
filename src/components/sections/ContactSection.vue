@@ -10,11 +10,11 @@
       <!-- <p>814 OASIS DRIVE<br>SWIFT CURRENT, SK</p> -->
       <p>CALL/EMAIL US FOR FREE ESTIMATE:</p>
       <p>+1306-580-0998</p>
-      <p>oleruozioma@gmail.com</p>
+      <p>contact@zizicleaners.com</p>
       <p class="orange-color">Let us do your dirty work!</p>
       <div class="social-media-links">
         <!-- Add your social media links here -->
-        <a href="your-facebook-link"><img src="@/assets/facebook-icon.svg" alt="Instagram" /></a>
+        <a href="your-facebook-link"><img src="@/assets/facebook-icon.svg" alt="Facebook" /></a>
         <a href="your-instagram-link"><img src="@/assets/instagram-icon.svg" alt="Instagram" /></a>
       </div>
     </div>
