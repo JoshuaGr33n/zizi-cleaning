@@ -9,4 +9,24 @@ body {
   }
   
 
-  
+  .admin-panel {
+    display: flex;
+    height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}

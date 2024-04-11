@@ -1,23 +1,31 @@
-// import { createApp } from 'vue'
-// import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store'; 
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
-// createApp(App).mount('#app')
 
-import { createApp } from 'vue'
-import App from './App.vue'
+
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@/assets/css/custom.css'; 
+import '@/assets/css/custom.css';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faFacebookF, faInstagram);
 
-library.add(faFacebookF, faInstagram)
+const app = createApp(App);
 
-export default {
-  components: {
-    FontAwesomeIcon
-  }
-}
+app.use(VueSweetalert2);
 
-createApp(App).mount('#app')
+app.component('font-awesome-icon', FontAwesomeIcon);
+app.use(router);
+app.use(store);
+store.dispatch('initializeStore');
+
+
+
+
+app.mount('#app');

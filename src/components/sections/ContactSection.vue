@@ -1,29 +1,56 @@
 <template>
   <div class="contact-section">
     <div class="photo-container">
-      <img src="@/assets/img/7.png" alt="Doctors" />
+      <img src="@/assets/img/7.png" alt="Front-Page" />
     </div>
     <div class="vertical-line"></div>
     <div class="info-container">
       <h3 class="orange-color">PROFESSIONAL</h3>
       <h2>CLEANING SERVICES</h2>
       <!-- <p>814 OASIS DRIVE<br>SWIFT CURRENT, SK</p> -->
+      <p v-for="address in addresses" :key="address.id">{{ address.desc }}</p>
       <p>CALL/EMAIL US FOR FREE ESTIMATE:</p>
-      <p>+1306-580-0998</p>
-      <p>contact@zizicleaners.com</p>
-      <p class="orange-color">Let us do your dirty work!</p>
+      <p v-for="ph in phone" :key="ph.id">{{ ph.name }}: {{ ph.value }}</p>
+      <p v-for="email in emails" :key="email.id">{{ email.name }}: {{ email.value }}</p>
+      <!-- <p class="orange-color">Let us do your dirty work!</p> -->
       <div class="social-media-links">
-        <!-- Add your social media links here -->
-        <a href="your-facebook-link"><img src="@/assets/facebook-icon.svg" alt="Facebook" /></a>
-        <a href="your-instagram-link"><img src="@/assets/instagram-icon.svg" alt="Instagram" /></a>
+        <a v-for="social in socials" :key="social.id" :href="social.url" target="_blank"><img
+            :src="social.image" :alt="social.tag" /></a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
+
 export default {
-  name: 'ContactSection'
+  name: 'ContactSection',
+  created() {
+    this.$store.dispatch('fetchSocials');
+    this.$store.dispatch('fetchPhone');
+    this.$store.dispatch('fetchEmails');
+    this.$store.dispatch('fetchAddresses');
+    this.$store.dispatch('fetchRequestSupportEmail');
+  },
+  computed: {
+    socials() {
+      return this.$store.state.socials;
+    },
+    phone() {
+      return this.$store.state.phone;
+    },
+    emails() {
+      return this.$store.state.emails;
+    },
+    addresses() {
+      return this.$store.state.addresses;
+    },
+    requestSupportEmail() {
+      return this.$store.state.requestSupportEmail;
+    },
+
+  },
 }
 </script>
 

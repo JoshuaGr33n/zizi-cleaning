@@ -26,7 +26,7 @@ export default {
 </style> -->
 
 
-<template>
+<!-- <template>
   <div id="app">
     <Home />
   </div>
@@ -42,4 +42,22 @@ export default {
 };
 </script>
 
-<style></style>
+<style></style> -->
+
+
+<template>
+  <div id="app">
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+
+
+export default {
+  name: 'App',
+};
+</script>
+
+<style>
+</style>
